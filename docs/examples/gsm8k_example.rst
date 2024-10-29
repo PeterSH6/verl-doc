@@ -113,6 +113,15 @@ answer, 0.1 to incorrect answer and 0 to no answer.
 
 **Training Script**
 
+The training script example for FSDP and Megatron-LM backend are stored in examples/ppo_trainer directory.
+
+.. code:: bash
+
+   cd ../ppo_trainer
+   bash run_deepseek7b_llm.sh
+
+The script of run_deepseek7b_llm.sh
+
 .. code:: bash
 
    set -x

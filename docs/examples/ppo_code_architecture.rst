@@ -12,22 +12,15 @@ Define the data
 ---------------
 
 Users need to preprocess and store the dataset in parquet files.
-And we implement two versions of `RLHFDataset` to load and tokenize the parquet files.
+And we implement `RLHFDataset` to load and tokenize the parquet files.
 
-For ``RLHFDatasetV2`` (Default), at least 1 fields are required:
-
-- ``prompt``: Contains the string prompt
-
-For ``RLHFDataset``, at least 2 fields are required:
+For ``RLHFDataset`` (Default), at least 1 fields are required:
 
 - ``prompt``: Contains the string prompt
-
-- ``prompt_id``: Contains the string prompt_id, used to uniquely identify
-  this prompt. If using a model-based reward, this can be omitted.
 
 We already provide some examples of processing the datasets to parquet
 files in `data_preprocess directory <https://github.com/volcengine/verl/blob/main/examples/data_preprocess>`_. Currently, we support
-preprocess of GSM8k, MATH and Hellasage datasets. See :doc:`../preparation/prepare_data` for
+preprocess of GSM8k, MATH, Hellasage, Full_hh_rlhf datasets. See :doc:`../preparation/prepare_data` for
 more information.
 
 Define the reward functions for different datasets

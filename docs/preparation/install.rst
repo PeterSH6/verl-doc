@@ -49,9 +49,6 @@ found in :doc:`FSDP Workers<../workers/fsdp_workers>`.
    pip3 install liger_kernel
    pip3 install ray==2.10 # other version may have bug
 
-   # install hdfs_io
-   export PYTHONPATH="$(pwd)/verl/utils/:$PYTHONPATH"
-
    # flash attention 2
    pip3 install flash-attn --no-build-isolation
 

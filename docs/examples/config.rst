@@ -20,7 +20,6 @@ Data
      val_batch_size: 1312
      return_raw_input_ids: False  # This should be set to true when the tokenizer between policy and rm differs
      return_raw_chat: False
-     version: v2
 
 - ``data.train_files``: Training set parquet. Can be a list or a single
   file. The program will read all files into memory, so it can’t be too
@@ -47,8 +46,6 @@ Data
   chat template. If using a model-based RM, and the policy and RM
   chat_templates are different, this flag needs to be set
 - ``data.return_raw_chat``:
-- ``data.version``: if ‘v2’, then using ``RLHFDatasetV2``. Else, using
-  ``RLHFDataset``
 - ``data.truncation``: Truncate the input_ids or prompt length if they
   exceed max_prompt_length. Default is ‘error’, not allow exceed the
   max_prompt_length. The users should increase the max_prompt_length if

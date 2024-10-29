@@ -14,14 +14,14 @@ The ``PPORayTrainer``, as a single process, is responsible for loading a
 complete batch of samples (prompts) from the dataset and then dispatch
 to different worker_groups runnning on different GPUs.
 
-To generalize the data loading, we implement the ``RLHFDatasetV2`` class
+To generalize the data loading, we implement the ``RLHFDataset`` class
 to load the preprocessed parquet files, apply chat templates to the
 prompts, add padding, truncate prompts that exceed max prompt length and
 then tokenize.
 
 .. code:: python
 
-   self.train_dataset = RLHFDatasetV2(parquet_files=self.config.data.train_files,
+   self.train_dataset = RLHFDataset(parquet_files=self.config.data.train_files,
                                        tokenizer=self.tokenizer,
                                        prompt_key=self.config.data.prompt_key,
                                        max_prompt_length=self.config.data.max_prompt_length,

@@ -5,7 +5,7 @@ Before starting the post-training job, we need to prepare the data for
 the policy training. The data should be stored in the parquet format.
 
 We provide several data preprocess scripts for different datasets,
-including GSM8K, MATH and HelloSwag. To prepare other datasets, we need
+including GSM8K, MATH, HelloSwag, Full_hh_rlhf. To prepare other datasets, we need
 to follow the following steps: The data preprocess script can be divided
 into two parts:
 
@@ -19,7 +19,7 @@ into two parts:
    import os
    import datasets
 
-   from hdfs_io import copy, makedirs
+   from verl.utils.hdfs_io import copy, makedirs
    import argparse
 
    # To extract the solution for each prompts in the dataset
@@ -62,7 +62,7 @@ into two parts:
    (as well as the ``extract_solution``) on their own to support
    different datasets or tasks.
 
-We already implemented the data preprocess of GSM8k, MATH and Hellaswag
+We already implemented the data preprocess of GSM8k, MATH, Hellaswag and Full_hh_rlhf
 datasets. And we take the GSM8k dataset as an example:
 
 **GSM8K**
@@ -73,7 +73,7 @@ In the ``make_map_fn``, each data field should consist of the following
 1. ``data_source``: The name of the dataset. To index the corresponding
    reward function in the ``RewardModule``
 2. ``prompt``: This field should be constructed in the format of
-   huggingface chat_template. The tokenizer in ``RLHFDatasetV2`` will
+   huggingface chat_template. The tokenizer in ``RLHFDataset`` will
    apply chat template and tokenize the prompt.
 3. ``ability``: Define the task category.
 4. ``reward_model``: Currently, we only utilize the ``ground_truth``
