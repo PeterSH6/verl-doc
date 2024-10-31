@@ -134,7 +134,6 @@ The script of run_deepseek7b_llm.sh
        data.max_prompt_length=512 \
        data.max_response_length=512 \
        actor_rollout_ref.model.path=~/models/deepseek-llm-7b-chat \
-       +actor_rollout_ref.model.use_rmpad=True \
        actor_rollout_ref.actor.optim.lr=1e-6 \
        actor_rollout_ref.actor.ppo_mini_batch_size=256 \
        actor_rollout_ref.actor.ppo_micro_batch_size=64 \
@@ -155,7 +154,6 @@ The script of run_deepseek7b_llm.sh
        critic.model.fsdp_config.param_offload=False \
        critic.model.fsdp_config.grad_offload=False \
        critic.model.fsdp_config.optimizer_offload=False \
-       +critic.use_rmpad=True
        algorithm.kl_ctrl.kl_coef=0.001 \
        trainer.critic_warmup=0 \
        trainer.logger=['console','tracking'] \

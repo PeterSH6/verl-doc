@@ -46,7 +46,6 @@ found in :doc:`FSDP Workers<../workers/fsdp_workers>`.
 
    # install vllm
    pip3 install vllm==0.5.4
-   pip3 install liger_kernel
    pip3 install ray==2.10 # other version may have bug
 
    # flash attention 2
